@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class ImageActivity extends AppCompatActivity {
 
     ListView listView;
@@ -22,24 +24,28 @@ public class ImageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        listView = findViewById(R.id.listView);
+        //listView = findViewById(R.id.listView);
         imageView = findViewById(R.id.imageView);
         spinner = findViewById(R.id.spinner);
 
-        String[] dogArray = new String[]{"dog1","dog2","dog3","dog4","dog5"};
+        //String[] dogArray = new String[]{"dog1","dog2","dog3","dog4","dog5"};
+        ArrayList dogList = new ArrayList<String>();
+        dogList.add("dog1");
+        dogList.add("dog2");dogList.add("dog3");dogList.add("dog4");dogList.add("dog5");
+
         dogs = new int[]{R.drawable.dog1,R.drawable.dog2,R.drawable.dog3,R.drawable.dog4,R.drawable.dog5};
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,dogArray);
-
-        listView.setAdapter(adapter);
+        //ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,dogArray);
+        myAdapter adapter = new myAdapter(this,dogList);
+        //listView.setAdapter(adapter);
         spinner.setAdapter(adapter);
-
+        /*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 imageView.setImageResource(dogs[position]);
             }
-        });
+        });*/
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
