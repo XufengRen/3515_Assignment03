@@ -37,22 +37,27 @@ public class myAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View row = inflater.inflate(R.layout.spinner_layout,parent,false);
-        TextView textView = (TextView)row.findViewById(R.id.spinnerText);
-        textView.setText(items.get(position));
         if(position>0){
+            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = inflater.inflate(R.layout.spinner_layout,parent,false);
+            TextView textView = (TextView)row.findViewById(R.id.spinnerText);
+            textView.setText(items.get(position));
+            textView.setGravity(Gravity.CENTER);
             ImageView imageView = (ImageView)row.findViewById(R.id.spinnerImage);
             imageView.setImageResource(imageID[position - 1]);
+            return row;
         }else{
+            TextView textView = new TextView(context);
             textView.setText(items.get(position));
+            textView.setGravity(Gravity.CENTER);
+            return textView;
         }
-        textView.setGravity(Gravity.CENTER);
+
 //        TextView textView = new TextView(context);
 //        textView.setText(items.get(position));
 //        textView.setGravity(Gravity.CENTER);
 //        return textView;
-        return row;
+
     }
 }

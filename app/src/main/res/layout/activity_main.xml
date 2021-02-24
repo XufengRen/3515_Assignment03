@@ -8,29 +8,31 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="362dp"
-        android:layout_height="348dp"
+        android:layout_width="266dp"
+        android:layout_height="244dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814"
+        app:layout_constraintVertical_bias="0.694"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="313dp"
-        android:layout_height="225dp"        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:layout_width="328dp"
+        android:layout_height="287dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.281" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="409dp"
+        android:layout_height="76dp"
         android:text="spinner"
         app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
