@@ -45,7 +45,10 @@ public class myAdapter extends BaseAdapter {
         if(position>0){
             ImageView imageView = (ImageView)row.findViewById(R.id.spinnerImage);
             imageView.setImageResource(imageID[position - 1]);
+        }else{
+            textView.setText(items.get(position));
         }
+        textView.setGravity(Gravity.CENTER);
 //        TextView textView = new TextView(context);
 //        textView.setText(items.get(position));
 //        textView.setGravity(Gravity.CENTER);

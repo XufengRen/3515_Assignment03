@@ -10,7 +10,7 @@
         android:layout_width="411dp"
         android:layout_height="106dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="176dp">
+        tools:layout_editor_absoluteY="72dp">
 
         <ImageView
             android:id="@+id/spinnerImage"
