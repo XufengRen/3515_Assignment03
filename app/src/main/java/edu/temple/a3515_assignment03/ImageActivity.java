@@ -30,13 +30,14 @@ public class ImageActivity extends AppCompatActivity {
 
         //String[] dogArray = new String[]{"dog1","dog2","dog3","dog4","dog5"};
         ArrayList dogList = new ArrayList<String>();
+        dogList.add("select one of the items");
         dogList.add("dog1");
         dogList.add("dog2");dogList.add("dog3");dogList.add("dog4");dogList.add("dog5");
 
         dogs = new int[]{R.drawable.dog1,R.drawable.dog2,R.drawable.dog3,R.drawable.dog4,R.drawable.dog5};
 
         //ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,dogArray);
-        myAdapter adapter = new myAdapter(this,dogList);
+        myAdapter adapter = new myAdapter(this,dogList,dogs);
         //listView.setAdapter(adapter);
         spinner.setAdapter(adapter);
         /*
@@ -46,14 +47,26 @@ public class ImageActivity extends AppCompatActivity {
                 imageView.setImageResource(dogs[position]);
             }
         });*/
+//        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+//            @Override
+//            public void onItemClick(AdapterView<?>parent, View view, int position,long id){
+//                imageView.setVisibility(View.INVISIBLE);
+//            }
+//        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                showPicture(position);
+                if (position>0){
+                    showPicture(position-1);
+                }else{}
+
             }
             @Override
-            public void onNothingSelected(AdapterView<?> parent){}
+            public void onNothingSelected(AdapterView<?> parent){
+                //imageView.setVisibility(View.GONE);
+            }
         });
 
 
